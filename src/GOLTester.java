@@ -344,7 +344,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new GameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0},
                      {1, 0, 0, 0, 0},
