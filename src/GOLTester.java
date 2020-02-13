@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class GOLTester {
 
+//Game of Life
 //Test cases for the method OneStep() for GameOfLife Class.
     @Test
     public void testGOLOneStep1(){
@@ -334,6 +335,7 @@ public class GOLTester {
         assertEquals(3, sol.neighbors(0,0));
     }
 
+//Torus Game of Life: The figures were shifted to the border of the 2D array to test how it interacts.
 //Test cases for the method OneStep() for GameOfLife Class.
     @Test
     public void testGOLTorusOneStep1(){
@@ -344,7 +346,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
-        TorusGameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0},
                      {1, 0, 0, 0, 0},
@@ -366,7 +368,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0, 0},
                      {0, 1, 0, 0, 0, 0},
@@ -389,7 +391,7 @@ public class GOLTester {
                      {0, 1, 1, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0, 0},
                      {1, 0, 0, 0, 0, 1},
@@ -410,7 +412,7 @@ public class GOLTester {
                      {1, 0, 0, 1},
                      {0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0},
                      {1, 0, 0, 1},
@@ -430,13 +432,13 @@ public class GOLTester {
                      {0, 0, 0, 1, 1},
                      {1, 1, 1, 1, 1}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
-        int[][] B = {{1, 1, 1, 1, 1},
-                     {0, 1, 0, 1, 1},
-                     {1, 0, 1, 1, 1},
-                     {0, 1, 0, 1, 1},
-                     {1, 1, 1, 1, 1}};
+        int[][] B = {{0, 0, 0, 0, 0},
+                     {0, 1, 0, 0, 0},
+                     {1, 0, 1, 0, 0},
+                     {0, 1, 0, 0, 0},
+                     {0, 0, 0, 0, 0}};
 
         sol.oneStep();
         assertArrayEquals(B, sol.board);
@@ -452,7 +454,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0},
@@ -474,7 +476,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0},
@@ -497,7 +499,7 @@ public class GOLTester {
                      {1, 0, 0, 0, 0, 1},
                      {0, 0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 1, 1, 0},
@@ -524,7 +526,7 @@ public class GOLTester {
                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -550,12 +552,12 @@ public class GOLTester {
                      {0, 0, 0, 1, 1},
                      {1, 1, 1, 1, 1}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
 
         int[][] B = {{0, 0, 0, 0, 0},
+                     {0, 1, 0, 0, 0},
                      {1, 0, 1, 0, 0},
-                     {0, 0, 0, 0, 0},
-                     {1, 0, 1, 0, 0},
+                     {0, 1, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
         sol.evolution(3);
@@ -570,7 +572,7 @@ public class GOLTester {
                       {0, 1, 0},
                       {1, 0, 1}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
         assertEquals(4, sol.neighbors(1,1));
     }
 
@@ -581,7 +583,7 @@ public class GOLTester {
                       {0, 0, 0},
                       {0, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
         assertEquals(0, sol.neighbors(1,1));
     }
 
@@ -592,7 +594,7 @@ public class GOLTester {
                       {1, 0, 1},
                       {0, 0, 1}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
         assertEquals(3, sol.neighbors(1,0));
     }
 
@@ -603,7 +605,7 @@ public class GOLTester {
                       {0, 0, 0},
                       {1, 0, 0}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
         assertEquals(1, sol.neighbors(2,0));
     }
 
@@ -614,7 +616,7 @@ public class GOLTester {
                       {1, 1, 1},
                       {1, 1, 1}};
 
-        GameOfLife sol = new GameOfLife(A);
+        TorusGameOfLife sol = new TorusGameOfLife(A);
         assertEquals(8, sol.neighbors(0,0));
     }
 }
