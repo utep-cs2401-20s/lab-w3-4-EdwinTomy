@@ -3,6 +3,7 @@ public class GameOfLife {
     int[][] board;
     int[][] previous;
 
+//Constructors.
     public GameOfLife(){}
 
     public GameOfLife(int size){
@@ -31,6 +32,7 @@ public class GameOfLife {
 
     }
 
+//Methods.
     public int[][] getBoard(){
         return board;
     }

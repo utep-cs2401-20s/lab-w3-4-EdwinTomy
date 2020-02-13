@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class GOLTester {
 
-//Game of Life
+//Game of Life.
 //Test cases for the method OneStep() for GameOfLife Class.
     @Test
     public void testGOLOneStep1(){
